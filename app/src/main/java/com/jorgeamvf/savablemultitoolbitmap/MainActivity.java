@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Saved!", Toast.LENGTH_LONG).show();
                     Bitmap bm = drawableView.obtainBitmap();
-                    MediaStore.Images.Media.insertImage(getContentResolver(), bm, "title", "Saved from Savable Multitools Bitmap");
+                    MediaStore.Images.Media.insertImage(getContentResolver(), bm, "title", "Saved from Savable Multi-tool Bitmap");
                 }
             }
         });

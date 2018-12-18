@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUi() {
         drawableView = findViewById(R.id.paintView);
-        ImageButton saveButton = findViewById(R.id.saveButton);
-        ImageButton setPainBrushTool = findViewById(R.id.setPainBrushTool);
         ImageButton setBackgroundPaintBucket = findViewById(R.id.setBackgroundPaintBucket);
-        ImageButton undoButton = findViewById(R.id.undoButton);
-        ImageButton clearButton = findViewById(R.id.clearButton);
+        ImageButton setPaintbrushTool = findViewById(R.id.setPaintbrushTool);
         ImageButton strokeWidthPlusButton = findViewById(R.id.strokeWidthPlusButton);
         ImageButton strokeWidthMinusButton = findViewById(R.id.strokeWidthMinusButton);
+        ImageButton undoButton = findViewById(R.id.undoButton);
+        ImageButton clearButton = findViewById(R.id.clearButton);
+        ImageButton saveButton = findViewById(R.id.saveButton);
         Button changeColorOrangeButton = findViewById(R.id.changeColorOrangeButton);
         Button changeColorYellowButton = findViewById(R.id.changeColorYellowButton);
         Button changeColorRedButton = findViewById(R.id.changeColorRedButton);
@@ -57,33 +57,19 @@ public class MainActivity extends AppCompatActivity {
         config.setCanvasWidth(1024);
         drawableView.setConfig(config);
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_GRANTED) {
-                    drawableView.setEnabled(true);
-                } else {
-                    ActivityCompat.requestPermissions(MainActivity.this, new String[]
-                            {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-                }
-                if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_DENIED) {
-                    Toast.makeText(MainActivity.this, "Please, give permission to allow photos to be save into your gallery", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Saved!", Toast.LENGTH_LONG).show();
-                    Bitmap bm = drawableView.obtainBitmap();
-                    MediaStore.Images.Media.insertImage(getContentResolver(), bm, "title", "Saved from Savable Multi-tool Bitmap");
-                }
-            }
-        });
-
         setBackgroundPaintBucket.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 config.setStrokeWidth(3072);
+            }
+        });
+
+        setPaintbrushTool.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                config.setStrokeWidth(10);
             }
         });
 
@@ -111,14 +97,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        setPainBrushTool.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                config.setStrokeWidth(10);
-            }
-        });
-
         undoButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -132,6 +110,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawableView.clear();
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                        PackageManager.PERMISSION_GRANTED) {
+                    drawableView.setEnabled(true);
+                } else {
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]
+                            {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+                }
+                if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
+                        PackageManager.PERMISSION_DENIED) {
+                    Toast.makeText(MainActivity.this, "Grant permission to save pictures to your gallery.", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Saved!", Toast.LENGTH_LONG).show();
+                    Bitmap bm = drawableView.obtainBitmap();
+                    MediaStore.Images.Media.insertImage(getContentResolver(), bm, "", "Saved from Savable Multi-tool Bitmap");
+                }
             }
         });
 

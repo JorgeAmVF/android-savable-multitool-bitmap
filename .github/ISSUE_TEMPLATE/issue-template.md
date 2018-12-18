@@ -1,12 +1,3 @@
----
-name: Issue template
-about: default guidelines
-title: ''
-labels: ''
-assignees: ''
-
----
-
 # Issue Templates
 
 ## Bug report

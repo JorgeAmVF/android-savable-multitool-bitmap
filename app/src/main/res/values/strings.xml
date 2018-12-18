@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Savable Multi-tool Bitmap</string>
+    <string name="button_clear">A button that clears the bitmap.</string>
+    <string name="button_paintbrush">A button that selects the paint brush tool.</string>
+    <string name="button_paint_bucket">A button that selects the paint bucket tool.</string>
+    <string name="button_save">A button that saves the bitmap.</string>
+    <string name="button_stroke_decrease">A button that decreases the size of the brush.</string>
+    <string name="button_stroke_increase">A button that increases the size of the brush.</string>
+    <string name="button_undo">A button that undoes the last change.</string>
 </resources>

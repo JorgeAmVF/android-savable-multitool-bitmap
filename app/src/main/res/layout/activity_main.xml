@@ -19,7 +19,7 @@
             android:src="@drawable/ic_format_paint_black_24dp" />
 
         <ImageButton
-            android:id="@+id/setPaintBrushTool"
+            android:id="@+id/setPaintbrushTool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/button_paintbrush"

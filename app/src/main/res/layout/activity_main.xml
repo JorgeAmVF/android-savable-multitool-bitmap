@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -14,42 +15,49 @@
             android:id="@+id/setBackgroundPaintBucket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_paint_bucket"
             android:src="@drawable/ic_format_paint_black_24dp" />
 
         <ImageButton
-            android:id="@+id/setPainBrushTool"
+            android:id="@+id/setPaintBrushTool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_paintbrush"
             android:src="@drawable/ic_brush_black_24dp" />
 
         <ImageButton
             android:id="@+id/strokeWidthPlusButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_stroke_increase"
             android:src="@drawable/ic_exposure_plus_1_black_24dp" />
 
         <ImageButton
             android:id="@+id/strokeWidthMinusButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_stroke_decrease"
             android:src="@drawable/ic_exposure_neg_1_black_24dp" />
 
         <ImageButton
             android:id="@+id/undoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_undo"
             android:src="@drawable/ic_undo_black_24dp" />
 
         <ImageButton
             android:id="@+id/clearButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_clear"
             android:src="@drawable/ic_delete_sweep_black_24dp" />
 
         <ImageButton
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/button_save"
             android:src="@drawable/ic_save_black_24dp" />
 
     </LinearLayout>
@@ -64,8 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorRed"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorRed" />
 
         <Button
             android:id="@+id/changeColorOrangeButton"
@@ -73,8 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorOrange"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorOrange" />
 
         <Button
             android:id="@+id/changeColorYellowButton"
@@ -82,8 +90,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorYellow"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorYellow" />
 
         <Button
             android:id="@+id/changeColorGreenButton"
@@ -91,8 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorGreen"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorGreen" />
 
         <Button
             android:id="@+id/changeColorBlueButton"
@@ -100,8 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorBlue"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorBlue" />
 
         <Button
             android:id="@+id/changeColorIndigoButton"
@@ -109,8 +117,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorIndigo"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorIndigo" />
 
         <Button
             android:id="@+id/changeColorVioletButton"
@@ -118,8 +126,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorViolet"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorViolet" />
 
         <Button
             android:id="@+id/changeColorWhiteButton"
@@ -127,8 +135,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorWhite"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorWhite" />
 
         <Button
             android:id="@+id/changeColorGreyButton"
@@ -136,8 +144,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorGrey"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorGrey" />
 
         <Button
             android:id="@+id/changeColorBlackButton"
@@ -145,15 +153,15 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight=".1"
-            android:backgroundTint="@color/colorBlack"
-            android:padding="1dp" />
+            android:padding="1dp"
+            app:backgroundTint="@color/colorBlack" />
 
     </LinearLayout>
 
     <me.panavtec.drawableview.DrawableView
         android:id="@+id/paintView"
-        android:layout_width="1024px"
-        android:layout_height="1024px"
+        android:layout_width="@dimen/bitmap_size"
+        android:layout_height="@dimen/bitmap_size"
         android:layout_gravity="top|center"
         android:layout_margin="8dp" />
 

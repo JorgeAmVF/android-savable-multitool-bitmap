@@ -50,18 +50,18 @@ public class MainActivity extends AppCompatActivity {
 
         config.setStrokeColor(getResources().getColor(R.color.colorGrey));
         config.setShowCanvasBounds(true);
-        config.setStrokeWidth(3072.0f);
+        config.setStrokeWidth(10);
         config.setMinZoom(1.0f);
         config.setMaxZoom(1.0f);
-        config.setCanvasHeight(1024);
-        config.setCanvasWidth(1024);
+        config.setCanvasHeight(768);
+        config.setCanvasWidth(768);
         drawableView.setConfig(config);
 
         setBackgroundPaintBucket.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                config.setStrokeWidth(3072);
+                config.setStrokeWidth(2304);
             }
         });
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if (config.getStrokeWidth() == 3072) {
+                if (config.getStrokeWidth() == 2304) {
                     config.setStrokeWidth(10);
                 } else {
                     config.setStrokeWidth(config.getStrokeWidth() + 10);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if (config.getStrokeWidth() == 3072) {
+                if (config.getStrokeWidth() == 2304) {
                     config.setStrokeWidth(10);
                 } else {
                     config.setStrokeWidth(config.getStrokeWidth() - 10);
